@@ -442,9 +442,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_menuMentesActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-                FileWriter etlap;
+        FileWriter etlap;
         ListModel<String> etlapok = lstEtlap.getModel();
-        String etlapok2 = "\n"+etlapok;
+        String etlapok2 = "\n" + etlapok;
         try {
             etlap = new FileWriter("etlap.txt");
             etlap.write(etlapok2);
@@ -456,15 +456,21 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-                FileWriter etlap;
+        FileWriter etlap;
         ListModel<String> etlapok = lstEtlap.getModel();
-        String etlapok2 = "";
-        for (int i = 0; i < etlapok.getSize(); i++) {
-            etlapok2 += "\n"+etlapok;
-        }
+        String asztalok = "";
+
+        asztalok += "Zöld";
+        asztalok += txtZold.getText() + "\n";
+        asztalok += "Piros";
+        asztalok += txtPiros.getText() + "\n";
+        asztalok += "Kék";
+        asztalok += txtKek.getText() + "\n";
+        asztalok += "Fehér";
+        asztalok += txtFeher.getText() + "\n";
         try {
             etlap = new FileWriter("asztal.txt");
-            etlap.write(etlapok2);
+            etlap.write(asztalok);
             etlap.close();
             System.out.println("ki mentve");
         } catch (IOException ex) {
