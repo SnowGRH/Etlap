@@ -4,6 +4,11 @@
  */
 package rendeles;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextPane;
@@ -66,7 +71,9 @@ public class GUI extends javax.swing.JFrame {
         lstEtlap = new javax.swing.JList<>();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuMentes = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -178,15 +185,17 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnRendeles)
-                        .addContainerGap())
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 23, Short.MAX_VALUE))))
+                        .addGap(0, 23, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnRendeles)))
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(cmbAsztal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -348,8 +357,30 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Étlap", jPanel2);
 
-        jMenu1.setText("Étlap mentés");
-        jMenuBar1.add(jMenu1);
+        menuMentes.setText("Étlap mentés");
+        menuMentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuMentesActionPerformed(evt);
+            }
+        });
+
+        jMenuItem1.setText("Étlap mentése");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuMentes.add(jMenuItem1);
+
+        jMenuItem2.setText("Asztal mentése");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menuMentes.add(jMenuItem2);
+
+        jMenuBar1.add(menuMentes);
 
         setJMenuBar(jMenuBar1);
 
@@ -379,15 +410,17 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEtelActionPerformed
 
     private void btnEtlapKuldesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEtlapKuldesActionPerformed
-        String etel = txtEtel.getText();
-        ListModel lm = lstEtlap.getModel();
-        int ar = (Integer) spiAr.getValue();
-        String etelar = etel + "|" + ar;
-        String rendelesetel = etel;
-        dlm.addElement(etelar);
-        dlm2.addElement(rendelesetel);
-        lstEtlap.setModel(dlm);
-        lstVEtlap.setModel(dlm2);
+        if (!"".equals(txtEtel.getText())) {
+            String etel = txtEtel.getText();
+            ListModel lm = lstEtlap.getModel();
+            int ar = (Integer) spiAr.getValue();
+            String etelar = etel + "|" + ar;
+            String rendelesetel = etel;
+            dlm.addElement(etelar);
+            dlm2.addElement(rendelesetel);
+            lstEtlap.setModel(dlm);
+            lstVEtlap.setModel(dlm2);
+        }
 
     }//GEN-LAST:event_btnEtlapKuldesActionPerformed
 
@@ -396,13 +429,48 @@ public class GUI extends javax.swing.JFrame {
         String mi = lstVEtlap.getSelectedValue();
         JTextPane txt = MelyikAsztal(asztal);
         String asztalEtele = txt.getText();
-
         mi += "\n" + asztalEtele;
 
         txt.setText(mi);
 
 
     }//GEN-LAST:event_btnRendelesActionPerformed
+
+    private void menuMentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMentesActionPerformed
+
+
+    }//GEN-LAST:event_menuMentesActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+                FileWriter etlap;
+        ListModel<String> etlapok = lstEtlap.getModel();
+        String etlapok2 = "\n"+etlapok;
+        try {
+            etlap = new FileWriter("etlap.txt");
+            etlap.write(etlapok2);
+            etlap.close();
+            System.out.println("ki mentve");
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+                FileWriter etlap;
+        ListModel<String> etlapok = lstEtlap.getModel();
+        String etlapok2 = "";
+        for (int i = 0; i < etlapok.getSize(); i++) {
+            etlapok2 += "\n"+etlapok;
+        }
+        try {
+            etlap = new FileWriter("asztal.txt");
+            etlap.write(etlapok2);
+            etlap.close();
+            System.out.println("ki mentve");
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private JTextPane MelyikAsztal(String asztal) {
         if (asztal == "Piros") {
@@ -460,8 +528,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -480,6 +549,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JList<String> lstEtlap;
     private javax.swing.JList<String> lstVEtlap;
+    private javax.swing.JMenu menuMentes;
     private javax.swing.JSpinner spiAr;
     private javax.swing.JTextField txtEtel;
     private javax.swing.JTextPane txtFeher;
