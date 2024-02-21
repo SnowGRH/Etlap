@@ -1,12 +1,5 @@
-Zölddasdad
-dasdad
+Zöldasdasd
 
-Pirosdasdad
-dasdad
-
-Kékdasdad
-dasdad
-
-Fehérdasdad
-dasdad
-
+Piros
+Kék
+Fehér
