@@ -74,30 +74,30 @@ public class GUI extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listNyZold = new javax.swing.JList<>();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        listNyPiros = new javax.swing.JList<>();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
+        listNyKek = new javax.swing.JList<>();
         jPanel17 = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        listNyFeher = new javax.swing.JList<>();
+        btnNyugta = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
-        jTextField8 = new javax.swing.JTextField();
+        txtNyPiros = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        txtNyKek = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        txtNyFeher = new javax.swing.JTextField();
+        txtNyZold = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuMentes = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -109,6 +109,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Fehér"));
 
+        txtFeher.setEditable(false);
         jScrollPane2.setViewportView(txtFeher);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -130,6 +131,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Zöld"));
 
+        txtZold.setEditable(false);
         jScrollPane4.setViewportView(txtZold);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -151,6 +153,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Kék"));
 
+        txtKek.setEditable(false);
         jScrollPane5.setViewportView(txtKek);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -172,6 +175,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder("Piros"));
 
+        txtPiros.setEditable(false);
         jScrollPane6.setViewportView(txtPiros);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -391,7 +395,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Zöld asztal"));
         jPanel11.setPreferredSize(new java.awt.Dimension(175, 181));
 
-        jScrollPane7.setViewportView(jList1);
+        jScrollPane7.setViewportView(listNyZold);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -412,12 +416,12 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Piros asztal"));
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        listNyPiros.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Babgulyás    700 Ft", "Rántott sajt  900 Ft", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane8.setViewportView(jList2);
+        jScrollPane8.setViewportView(listNyPiros);
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -438,7 +442,7 @@ public class GUI extends javax.swing.JFrame {
 
         jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Kék asztal"));
 
-        jScrollPane9.setViewportView(jList3);
+        jScrollPane9.setViewportView(listNyKek);
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -460,7 +464,7 @@ public class GUI extends javax.swing.JFrame {
         jPanel17.setBorder(javax.swing.BorderFactory.createTitledBorder("Fehér asztal"));
         jPanel17.setPreferredSize(new java.awt.Dimension(175, 181));
 
-        jScrollPane13.setViewportView(jList7);
+        jScrollPane13.setViewportView(listNyFeher);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -479,28 +483,18 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Nyomtatás");
+        btnNyugta.setText("Nyomtatás");
 
         jPanel18.setBorder(javax.swing.BorderFactory.createTitledBorder("Asztalok Összege"));
 
-        jTextField8.setEditable(false);
-        jTextField8.setText("1600");
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
+        txtNyPiros.setEditable(false);
+        txtNyPiros.setText("1600");
 
         jLabel22.setText("Fehér Asztal Összege :");
 
         jLabel19.setText("Piros Asztal Összege :");
 
-        jTextField10.setEditable(false);
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
+        txtNyKek.setEditable(false);
 
         jLabel7.setText("Ft");
 
@@ -514,19 +508,9 @@ public class GUI extends javax.swing.JFrame {
 
         jLabel20.setText("Zöld Asztal Összege :");
 
-        jTextField11.setEditable(false);
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
-            }
-        });
+        txtNyFeher.setEditable(false);
 
-        jTextField9.setEditable(false);
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
+        txtNyZold.setEditable(false);
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -538,7 +522,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField8)
+                        .addComponent(txtNyPiros)
                         .addGap(12, 12, 12)
                         .addComponent(jLabel5))
                     .addGroup(jPanel18Layout.createSequentialGroup()
@@ -546,21 +530,21 @@ public class GUI extends javax.swing.JFrame {
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addComponent(jLabel22)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField11)
+                                .addComponent(txtNyFeher)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8)
                                 .addGap(2, 2, 2))
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField9)
+                                .addComponent(txtNyZold)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6)
                                 .addGap(1, 1, 1))
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addComponent(jLabel21)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField10)
+                                .addComponent(txtNyKek)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)))
                         .addGap(7, 7, 7)))
@@ -572,22 +556,22 @@ public class GUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNyPiros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNyZold, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNyKek, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNyFeher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addContainerGap())
         );
@@ -611,7 +595,7 @@ public class GUI extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(35, 35, 35)
-                        .addComponent(jButton1)
+                        .addComponent(btnNyugta)
                         .addContainerGap())))
         );
         jPanel10Layout.setVerticalGroup(
@@ -628,7 +612,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnNyugta)
                         .addGap(17, 17, 17))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
@@ -639,7 +623,7 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Nyugta", jPanel10);
 
-        menuMentes.setText("Mentés");
+        menuMentes.setText("Mentések");
         menuMentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuMentesActionPerformed(evt);
@@ -742,13 +726,13 @@ public class GUI extends javax.swing.JFrame {
         ListModel<String> etlapok = lstEtlap.getModel();
         String asztalok = "";
 
-        asztalok += "Zöld";
+        asztalok += "Zöld \n";
         asztalok += txtZold.getText() + "\n";
-        asztalok += "Piros";
+        asztalok += "Piros \n";
         asztalok += txtPiros.getText() + "\n";
-        asztalok += "Kék";
+        asztalok += "Kék \n";
         asztalok += txtKek.getText() + "\n";
-        asztalok += "Fehér";
+        asztalok += "Fehér \n";
         asztalok += txtFeher.getText() + "\n";
         try {
             etlap = new FileWriter("asztal.txt");
@@ -759,22 +743,6 @@ public class GUI extends javax.swing.JFrame {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
-
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
 
     private JTextPane MelyikAsztal(String asztal) {
         if (asztal == "Piros") {
@@ -826,16 +794,10 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEtlapKuldes;
+    private javax.swing.JButton btnNyugta;
     private javax.swing.JButton btnRendeles;
     private javax.swing.JComboBox<String> cmbAsztal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -847,13 +809,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
-    private javax.swing.JList<String> jList7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -862,9 +817,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
@@ -876,9 +828,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -889,13 +838,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JList<String> listNyFeher;
+    private javax.swing.JList<String> listNyKek;
+    private javax.swing.JList<String> listNyPiros;
+    private javax.swing.JList<String> listNyZold;
     private javax.swing.JList<String> lstEtlap;
     private javax.swing.JList<String> lstVEtlap;
     private javax.swing.JMenu menuMentes;
@@ -903,6 +849,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtEtel;
     private javax.swing.JTextPane txtFeher;
     private javax.swing.JTextPane txtKek;
+    private javax.swing.JTextField txtNyFeher;
+    private javax.swing.JTextField txtNyKek;
+    private javax.swing.JTextField txtNyPiros;
+    private javax.swing.JTextField txtNyZold;
     private javax.swing.JTextPane txtPiros;
     private javax.swing.JTextPane txtZold;
     // End of variables declaration//GEN-END:variables
