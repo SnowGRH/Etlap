@@ -1,5 +1,5 @@
 
-package rendeles;
+package model;
 
 
 public class Etel {
@@ -10,7 +10,11 @@ public class Etel {
         this.neve = neve;
         this.ar = ar;
     }
-
+    public Etel(String sor){
+       String[] split = sor.split("\\|");
+       this.neve = split[0];
+       this.ar = Integer.valueOf(split[1]);
+    }
     public String getNeve() {
         return neve;
     }
@@ -19,12 +23,5 @@ public class Etel {
         return ar;
     }
 
-    public void setNeve(String neve) {
-        this.neve = neve;
-    }
-
-    public void setAr(int ar) {
-        this.ar = ar;
-    }
     
 }

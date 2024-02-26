@@ -1,14 +1,14 @@
-
-package rendeles;
+package model;
 
 import java.util.ArrayList;
 
 
-public class Asztalok {
+public class Asztal {
+
     private String szin;
     private ArrayList<Etel> rendelesek;
 
-    public Asztalok(String szin, ArrayList<Etel> rendelesek) {
+    public Asztal(String szin, ArrayList<Etel> rendelesek) {
         this.szin = szin;
         this.rendelesek = rendelesek;
     }
@@ -20,15 +20,11 @@ public class Asztalok {
     public ArrayList<Etel> getRendelesek() {
         return rendelesek;
     }
-
-    public void setSzin(String szin) {
-        this.szin = szin;
+    public void vegOsszeg(){
+        
     }
 
-    public void setRendelesek(ArrayList<Etel> rendelesek) {
-        this.rendelesek = rendelesek;
-    }
-    
-    
     
 }
+
+
